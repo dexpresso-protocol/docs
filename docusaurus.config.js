@@ -2,22 +2,24 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/nightOwl');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Dexpresso',
+  tagline: 'Dexpresso Protocol Documentation',
   url: 'https://docs.dexpresso.exchange',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'dexpresso-protocol', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -33,6 +35,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -56,22 +59,56 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {
-        title: 'My Site',
+      metadata: [
+        {name: 'title', content: 'Dexpresso'},
+        {name: 'description', content: 'Dexpresso Protocol Documentation'}      
+      ],
+      image: 'img/logo.svg',
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      navbar: { 
+        title: 'Dexpresso',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Dexpresso Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'HowToUse',
             position: 'left',
-            label: 'Tutorial',
+            label: 'How To Use',
+          },
+          {
+            type: 'doc',
+            docId: 'Concepts',
+            position: 'left',
+            label: 'Concepts',
+          },
+          {
+            type: 'doc',
+            docId: 'LitePaper',
+            position: 'left',
+            label: 'LitePaper',
+          },
+          {
+            type: 'doc',
+            docId: 'Develope',
+            position: 'left',
+            label: 'Develope',
+          },
+          {
+            type: 'doc',
+            docId: 'Community',
+            position: 'left',
+            label: 'Community',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/dexpresso-protocol',
             label: 'GitHub',
             position: 'right',
           },
@@ -81,11 +118,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Links',
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/HowToUse',
               },
             ],
           },
@@ -120,11 +157,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Dexpresso, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        theme: lightCodeTheme,
       },
     }),
 };

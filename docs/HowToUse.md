@@ -1,5 +1,10 @@
 ---
+title: How to Use Dexpresso
 sidebar_position: 1
+slug: /
+sidebar_label: Overview
+
+
 ---
 
 # Tutorial Intro
