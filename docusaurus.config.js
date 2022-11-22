@@ -9,7 +9,7 @@ const config = {
   title: 'Dexpresso',
   tagline: 'Dexpresso Protocol Documentation',
   url: 'https://docs.dexpresso.exchange',
-  baseUrl: '',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
