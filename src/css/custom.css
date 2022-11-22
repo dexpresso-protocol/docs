@@ -26,10 +26,6 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: #111f3b ;
-  
-}
-
-.featuresAlt {
-  background-color: var(--ifm-color-primary-lightest);
+  --ifm-background-color-dark: #111f3b;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
