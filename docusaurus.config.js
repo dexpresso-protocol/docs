@@ -106,9 +106,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'Develope',
+            docId: 'Develop',
             position: 'left',
-            label: 'Develope',
+            label: 'Develop',
           },
           {
             type: 'doc',

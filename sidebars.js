@@ -48,18 +48,37 @@ module.exports = {
     },
   ],
 
-  Develope: [
+  Develop: [
     {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['Develope',],
+      items: ['Develop'],
     },
     {
       type: 'category',
-      label: 'test category',
+      label: 'API Doocumentation',
       collapsed: false,
-      items: ['Develope/test',],
+      items: ['Develop/API/api','Develop/API/ws'],
+    },
+    {
+      type: 'category',
+      label: 'SDK Doocumentation',
+      collapsed: false,
+      items: [
+        {
+          type: 'category',
+          label: 'Python SDK',
+          collapsed: false,
+          items: ['Develop/SDK/python', 'Develop/SDK/python/Installation', 'Develop/SDK/python/Structure', 'Develop/SDK/python/ExampleUsage']
+        },
+        {
+          type: 'category',
+          label: 'JavaScript SDK',
+          collapsed: false,
+          items: ['Develop/SDK/js']
+        }
+      ],
     },
   ],
 
