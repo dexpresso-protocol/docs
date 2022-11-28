@@ -43,8 +43,19 @@ module.exports = {
     },
     {
       type: 'doc',
-      label: 'Abstract',
-      id: 'LitePaper/abstract',
+      label: 'Contracts',
+      id: 'LitePaper/contracts',
+    },
+    {
+      type: 'category',
+      label: 'Analysis',
+      collapsed: false,
+      items: ['LitePaper/robustness_soundness', 'LitePaper/user_privacy', 'LitePaper/security_analysis'],
+    },
+    {
+      type: 'doc',
+      label: 'Conclusion',
+      id: 'LitePaper/conclusion',
     },
   ],
 
