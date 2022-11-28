@@ -1,5 +1,5 @@
 ---
-title: Develope
+title: Develop
 sidebar_label: Overview
 ---
 
