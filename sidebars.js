@@ -26,16 +26,25 @@ module.exports = {
 
   LitePaper: [
     {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: ['LitePaper',],
+      type: 'doc',
+      id: 'LitePaper',
+      label: 'Overview',
+    },
+    {
+      type: 'doc',
+      label: 'Abstract',
+      id: 'LitePaper/abstract',
     },
     {
       type: 'category',
-      label: 'test category',
+      label: 'Motivation',
       collapsed: false,
-      items: ['LitePaper/test',],
+      items: ['LitePaper/motivation_cex_dex', 'LitePaper/motivation_dexpresso'],
+    },
+    {
+      type: 'doc',
+      label: 'Abstract',
+      id: 'LitePaper/abstract',
     },
   ],
 
