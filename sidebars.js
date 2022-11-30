@@ -78,15 +78,20 @@ module.exports = {
       collapsed: false,
       items: [
         {
+          type: 'doc',
+          label: 'Overview',
+          id: 'Develop/SDK/main',
+        },
+        {
           type: 'category',
           label: 'Python SDK',
-          collapsed: false,
-          items: ['Develop/SDK/python', 'Develop/SDK/python/Installation', 'Develop/SDK/python/Structure', 'Develop/SDK/python/ExampleUsage']
+          collapsed: true,
+          items: ['Develop/SDK/python/Installation', 'Develop/SDK/python/Structure', 'Develop/SDK/python/ExampleUsage']
         },
         {
           type: 'category',
           label: 'JavaScript SDK',
-          collapsed: false,
+          collapsed: true,
           items: ['Develop/SDK/js']
         }
       ],
