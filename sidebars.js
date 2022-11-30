@@ -100,16 +100,29 @@ module.exports = {
 
   Community: [
     {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: ['Community',],
+      type: 'doc',
+      label: 'Overview',
+      id: 'Community',
     },
     {
-      type: 'category',
-      label: 'test category',
-      collapsed: false,
-      items: ['Community/test',],
+      type: 'doc',
+      label: 'Twitter',
+      id: 'Community/Twitter',
+    },
+    {
+      type: 'doc',
+      label: 'Discord',
+      id: 'Community/Discord',
+    },
+    {
+      type: 'doc',
+      label: 'Telegram',
+      id: 'Community/Telegram',
+    },
+    {
+      type: 'doc',
+      label: 'Youtube',
+      id: 'Community/Youtube',
     },
   ],
 };
