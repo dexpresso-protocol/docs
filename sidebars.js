@@ -2,10 +2,25 @@ module.exports = {
 
   HowToUse: [
     {
-      type: 'category',
+      type: 'doc',
+      id: 'HowToUse',
       label: 'Getting Started',
-      collapsed: false,
-      items: ['HowToUse',],
+    },
+    {
+      type: 'category',
+      label: 'Cryptocurrency Wallets',
+      collapsed: true,
+      items: ['HowToUse/Wallets/Metamask', 'HowToUse/Wallets/WalletConnect'],
+    },
+    {
+      type: 'doc',
+      id: 'HowToUse/GeneralOverview',
+      label: 'General Overview',
+    },
+    {
+      type: 'doc',
+      id: 'HowToUse/OrderSubmission',
+      label: 'Order Submission',
     },
   ],
 
