@@ -41,9 +41,13 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      "docusaurus-preset-openapi",
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
+        api: {
+          path: "docs/API/api-v1.json",
+          routeBasePath: "/api",
+        },
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -65,9 +69,9 @@ const config = {
       }),
     ],
   ],
-
+  
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('docusaurus-preset-openapi').ThemeConfig} */
     ({
       metadata: [
         {name: 'title', content: 'Dexpresso'},
@@ -104,6 +108,7 @@ const config = {
             position: 'left',
             label: 'LitePaper',
           },
+          {to: '/api', label: 'APIs', position: 'left'},
           {
             type: 'doc',
             docId: 'Develop',
