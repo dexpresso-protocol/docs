@@ -15,7 +15,7 @@
   "paths": {
     "/markets/info": {
       "get": {
-        "summary": "Markets Info",
+        "summary": "GET markets info",
         "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "MarketsInfo",
         "tags": ["Markets"],
@@ -69,7 +69,7 @@
     },
     "/markets/config": {
       "get": {
-        "summary": "Markets Config",
+        "summary": "GET markets config",
         "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "MarketsConfig",
         "tags": ["Markets"],
@@ -123,7 +123,7 @@
     },
     "/markets/stats": {
       "get": {
-        "summary": "Markets Stat",
+        "summary": "GET markets stat",
         "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "MarketsStat",
         "tags": ["Markets"],
@@ -177,7 +177,7 @@
     },
     "/orders": {
       "get": {
-        "summary": "Order Book",
+        "summary": "GET orderbook",
         "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "OrderBook",
         "tags": ["Orders"],
@@ -264,9 +264,9 @@
     },
     "/user/orders": {
       "get": {
-        "summary": "User Order History",
+        "summary": "GET user order history",
         "description": "Represents history of user orders. One can specifiy multiple parameters, such as __network__ and __market__ to get a filtered list of user orders.",
-        "operationId": "OrderBook",
+        "operationId": "UserOrders",
         "tags": ["Orders"],
         "parameters": [
           {
@@ -371,9 +371,9 @@
         }
       },
       "delete": {
-        "summary": "Cancel All Orders",
+        "summary": "CANCEL all orders",
         "description": "Cancels all user orders.",
-        "operationId": "OrderBook",
+        "operationId": "CancelOrders",
         "tags": ["Orders"],
         "parameters": [
           {
@@ -447,9 +447,9 @@
     },
     "/user/order": {
       "get": {
-        "summary": "Single User Order",
+        "summary": "GET a single user order",
         "description": "Returns a single order of the user (specified by __order_id__).",
-        "operationId": "OrderBook",
+        "operationId": "UserOrder",
         "tags": ["Orders"],
         "parameters": [
           {
@@ -504,9 +504,9 @@
         }
       },
       "delete": {
-        "summary": "Cancel Single Order",
+        "summary": "CANCEL a single order",
         "description": "Returns a single order of the user (specified by __order_id__).",
-        "operationId": "OrderBook",
+        "operationId": "CancelOrder",
         "tags": ["Orders"],
         "parameters": [
           {
@@ -565,7 +565,7 @@
         }
       },
       "post": {
-        "summary": "Submit Order",
+        "summary": "SUBMIT order",
         "description": "Returns a single order of the user (specified by __order_id__).",
         "operationId": "OrderBook",
         "tags": ["Orders"],
@@ -696,7 +696,7 @@
     },
     "/login": {
       "post": {
-        "summary": "Connect to Dexpresso",
+        "summary": "CONNECT to Dexpresso",
         "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
         "operationId": "Login",
         "tags": ["Authentication"],
@@ -773,7 +773,7 @@
     },
     "/fills": {
       "get": {
-        "summary": "Latest Trades",
+        "summary": "GET latest trades",
         "description": "Provides latest trades in the chosen __network__ and __market__.",
         "operationId": "MarketFills",
         "tags": ["Trades"],
@@ -849,7 +849,7 @@
     },
     "/user/fills": {
       "get": {
-        "summary": "User Trade History",
+        "summary": "GET user trade history",
         "description": "Provides trade history of the user in the chosen __network__ and __market__.",
         "operationId": "UserFills",
         "tags": ["Trades"],
@@ -936,7 +936,7 @@
     },
     "/markets/subscription": {
       "post": {
-        "summary": "Subscribe to Market",
+        "summary": "SUBSCRIBE to a market",
         "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
         "operationId": "Login",
         "tags": ["Websocket"],
@@ -1001,7 +1001,7 @@
         }
       },
       "delete": {
-        "summary": "Unsubscribe from Market",
+        "summary": "UNSUBSCRIBE from market",
         "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
         "operationId": "Login",
         "tags": ["Websocket"],
