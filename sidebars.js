@@ -30,13 +30,7 @@ module.exports = {
       label: 'Getting Started',
       collapsed: false,
       items: ['Concepts',],
-    },
-    {
-      type: 'category',
-      label: 'test category',
-      collapsed: false,
-      items: ['Concepts/test',],
-    },
+    }
   ],
 
   LitePaper: [
