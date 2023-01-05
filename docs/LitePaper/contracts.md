@@ -1,5 +1,5 @@
 ---
-title: LitePaper Contracts
+title: Contracts
 sidebar_label: Contracts
 ---
 

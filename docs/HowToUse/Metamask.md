@@ -1,5 +1,5 @@
 ---
-title: HowToUse issues
+title: Metamask
 sidebar_label: Metamask
 ---
 
