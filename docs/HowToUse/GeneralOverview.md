@@ -1,5 +1,5 @@
 ---
-title: HowToUse issues
+title: Overview of the Trade App
 sidebar_label: Overview of the Trade App
 ---
 

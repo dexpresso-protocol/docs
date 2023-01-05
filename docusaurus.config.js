@@ -54,14 +54,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/dexpresso-protocol/docs/',
+            'https://github.com/dexpresso-protocol/docs/tree/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/dexpresso-protocol/docs/',
+            'https://github.com/dexpresso-protocol/docs/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

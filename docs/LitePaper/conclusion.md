@@ -1,5 +1,5 @@
 ---
-title: LitePaper Conclusion
+title: Conclusion
 sidebar_label: Conclusion
 ---
 

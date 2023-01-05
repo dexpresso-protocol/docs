@@ -1,5 +1,5 @@
 ---
-title: LitePaper Abstract
+title: Abstract
 sidebar_label: Abstract
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: LitePaper Security Analysis
+title: Security Analysis
 sidebar_label: Security Analysis
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: LitePaper Motivation
+title: CEX vs. DEX
 sidebar_label: CEX vs. DEX
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: LitePaper Robustness
+title: Robustness
 sidebar_label: Robustness
 ---
 
