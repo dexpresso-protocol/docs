@@ -70,7 +70,7 @@
     "/markets/config": {
       "get": {
         "summary": "GET markets config",
-        "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
+        "description": "This endpoint provides information about Dexpresso details regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "MarketsConfig",
         "tags": ["Markets"],
         "parameters": [
@@ -79,7 +79,13 @@
             "in": "query",
             "description": "User's selected network name",
             "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
+            "example": [
+              "zksyncv1",
+              "ethereum",
+              "zksyncv1_goerli",
+              "fantom",
+              "polygon"
+            ],
             "schema": {
               "type": "string",
               "format": "string"
@@ -99,7 +105,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information about config of requested markets",
             "content": {
               "application/json": {
                 "schema": {
@@ -124,7 +130,7 @@
     "/markets/stats": {
       "get": {
         "summary": "GET markets stat",
-        "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
+        "description": "This endpoint provides information about statistics related to Dexpresso markets regarding __one__, __many__, or __all__ markets available in a __single__ network.",
         "operationId": "MarketsStat",
         "tags": ["Markets"],
         "parameters": [
@@ -133,7 +139,13 @@
             "in": "query",
             "description": "User's selected network name",
             "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
+            "example": [
+              "zksyncv1",
+              "ethereum",
+              "zksyncv1_goerli",
+              "fantom",
+              "polygon"
+            ],
             "schema": {
               "type": "string",
               "format": "string"
@@ -153,7 +165,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information about stas of requested markets",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,7 +190,7 @@
     "/orders": {
       "get": {
         "summary": "GET orderbook",
-        "description": "This endpoint provides information regarding __one__, __many__, or __all__ markets available in a __single__ network.",
+        "description": "Represents Total open orders of Dexpresso (order book) for a __single__ market in a __single__ network.",
         "operationId": "OrderBook",
         "tags": ["Orders"],
         "parameters": [
@@ -187,7 +199,13 @@
             "in": "query",
             "description": "User's selected network name",
             "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
+            "example": [
+              "zksyncv1",
+              "ethereum",
+              "zksyncv1_goerli",
+              "fantom",
+              "polygon"
+            ],
             "schema": {
               "type": "string",
               "format": "string"
@@ -198,7 +216,7 @@
             "in": "query",
             "description": "Market's symbol",
             "required": true,
-            "example": ["ETH-DAI","ETH-USDC"],
+            "example": ["ETH-DAI", "ETH-USDC"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -209,7 +227,7 @@
             "in": "query",
             "description": "Side of the orders",
             "required": false,
-            "example": ["b","s"],
+            "example": ["b", "s"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -240,7 +258,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of requested orderbook",
             "content": {
               "application/json": {
                 "schema": {
@@ -264,7 +282,7 @@
     },
     "/user/orders": {
       "get": {
-        "summary": "GET user order history",
+        "summary": "GET user orders history",
         "description": "Represents history of user orders. One can specifiy multiple parameters, such as __network__ and __market__ to get a filtered list of user orders.",
         "operationId": "UserOrders",
         "tags": ["Orders"],
@@ -281,22 +299,11 @@
             }
           },
           {
-            "name": "network",
-            "in": "query",
-            "description": "User's selected network name",
-            "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
-            "schema": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          {
             "name": "market",
             "in": "query",
             "description": "Market's symbol",
-            "required": true,
-            "example": ["ETH-DAI","ETH-USDC"],
+            "required": false,
+            "example": ["ETH-DAI", "ETH-USDC"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -307,7 +314,7 @@
             "in": "query",
             "description": "Start of the orders query period",
             "required": false,
-            "example": ["2022-07-26T16:49:30.560Z","2022-07-27T16:49:30.560Z"],
+            "example": ["2022-07-26T16:49:30.560Z", "2022-07-27T16:49:30.560Z"],
             "schema": {
               "type": "Datetime",
               "format": "Datetime"
@@ -318,7 +325,7 @@
             "in": "query",
             "description": "End of the orders query period",
             "required": false,
-            "example": ["2022-07-26T16:49:30.560Z","2022-07-27T16:49:30.560Z"],
+            "example": ["2022-07-26T16:49:30.560Z", "2022-07-27T16:49:30.560Z"],
             "schema": {
               "type": "Datetime",
               "format": "Datetime"
@@ -349,7 +356,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of user orders history for the given network and market",
             "content": {
               "application/json": {
                 "schema": {
@@ -372,7 +379,7 @@
       },
       "delete": {
         "summary": "CANCEL all orders",
-        "description": "Cancels all user orders.",
+        "description": "Cancel all active orders on __one__ or __each__ sides for __one__, __many__, or __all__ markets.",
         "operationId": "CancelOrders",
         "tags": ["Orders"],
         "parameters": [
@@ -388,22 +395,11 @@
             }
           },
           {
-            "name": "network",
-            "in": "query",
-            "description": "User's selected network name",
-            "required": false,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
-            "schema": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          {
             "name": "market",
             "in": "query",
             "description": "Market's symbol",
             "required": false,
-            "example": ["ETH-DAI","ETH-USDC"],
+            "example": ["ETH-DAI", "ETH-USDC"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -423,11 +419,16 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of cancelled orders",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/user_orders"
+                  "type": "json",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "network": { "type": "string" },
+                    "ids": { "format": "List[integer]" }
+                  }
                 }
               }
             }
@@ -448,7 +449,7 @@
     "/user/order": {
       "get": {
         "summary": "GET a single user order",
-        "description": "Returns a single order of the user (specified by __order_id__).",
+        "description": "Provides a single order of the user (specified by __order_id__).",
         "operationId": "UserOrder",
         "tags": ["Orders"],
         "parameters": [
@@ -477,16 +478,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of user order for the given network and market",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "json",
-                  "properties": {
-                    "success": { "type": "boolean" },
-                    "network": { "type": "string" },
-                    "ids": { "format": "List[integer]" }
-                  }
+                  "$ref": "#/components/schemas/user_order"
                 }
               }
             }
@@ -505,7 +501,7 @@
       },
       "delete": {
         "summary": "CANCEL a single order",
-        "description": "Returns a single order of the user (specified by __order_id__).",
+        "description": "Cancel an active order.",
         "operationId": "CancelOrder",
         "tags": ["Orders"],
         "parameters": [
@@ -534,7 +530,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of cancelled order",
             "content": {
               "application/json": {
                 "schema": {
@@ -566,8 +562,8 @@
       },
       "post": {
         "summary": "SUBMIT order",
-        "description": "Returns a single order of the user (specified by __order_id__).",
-        "operationId": "OrderBook",
+        "description": "Place a new order",
+        "operationId": "SubmitOrder",
         "tags": ["Orders"],
         "parameters": [
           {
@@ -587,85 +583,153 @@
             "application/x-www-form-urlencoded": {
               "schema": {
                 "type": "object",
-                 "properties": {
-                    "tx": {
-                      "type": "Json Object",
-                      "properties": {
-                        "accountId": { 
-                          "description": "Account Id representor of the account in the blockchain.",
-                          "type": "integer"
-                        },
-                        "recipient": { 
-                          "description": "Account address in the blockchain.",
-                          "type": "string",
-                          "example" : ["0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"]
-                        },
-                        "nonce": {
-                          "description": "Account nonce in the blockchain.",
-                          "type": "integer",
-                          "example" : ["31"]
-                        },
-                        "amount": {
-                          "description": "Size of the order in terms of base-asset.",
-                          "type": "float",
-                          "example" : ["0.82"]
-                        },
-                        "tokenSell": {
-                          "description": "Address of the selling token.",
-                          "type": "string",
-                          "example" : ["0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"]
-                        },
-                        "tokenBuy": {
-                          "description": "Address of the receiving token.",
-                          "type": "string",
-                          "example" : ["0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"]
-                        },
-                        "validUntil": {
-                          "description": "The order will be valid until blockchain's block number reaches this number.",
-                          "type": "integer",
-                          "example" : ["1238843488"]
-                        },
-                        "ratio": {
-                          "description": "The order will be valid until blockchain's block number reaches this number.",
-                          "type": "tuple",
-                          "example" : ["[\"1000000000000000000\", \"990000000\"]"]
-                        },
-                        "signature": {
-                          "properties": {
-                            "pubKey": {"type": "Public Key Hex String", "example": "95d4f626c9545758603d6e19d135803b19d0df61edf923a206f216e097b40faf"},
-                            "signature": {"type": "Signature Hex String", "example": "0x1bf137178568d44b93258e60f0656cba3064f614e0e3664afa2365ebf09405fe1f54eacf584e2e197c42fcd11656620f9827b85d7675f0e34c02a8ff0cd7b0621c"}
-                          }
-                        },
-                        "ethSignature": {
-                          "properties": {
-                            "type": {"type": "EthereumSignature", "example": "EthereumSignature"},
-                            "signature": {"type": "Signature Hex String", "example": "0x1bf137178568d44b93258e60f0656cba3064f614e0e3664afa2365ebf09405fe1f54eacf584e2e197c42fcd11656620f9827b85d7675f0e34c02a8ff0cd7b0621c"}
+                "properties": {
+                  "tx": {
+                    "type": "Json Object",
+                    "properties": {
+                      "validUntil": {
+                        "description": "The order will be valid until blockchain's block number reaches this number.",
+                        "type": "integer",
+                        "example": ["1238843488"]
+                      },
+                      "signature": {
+                        "properties": {
+                          "pubKey": {
+                            "type": "Public Key Hex String",
+                            "example": "95d4f626c9545758603d6e19d135803b19d0df61edf923a206f216e097b40faf"
+                          },
+                          "signature": {
+                            "type": "Signature Hex String",
+                            "example": "0x1bf137178568d44b93258e60f0656cba3064f614e0e3664afa2365ebf09405fe1f54eacf584e2e197c42fcd11656620f9827b85d7675f0e34c02a8ff0cd7b0621c"
                           }
                         }
+                      },
+                      "maxFeeRatio": {
+                        "description": "Fee cost for the platform and the network.",
+                        "type": "integer",
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "clientOrderId": {
+                        "description": "Unique id that ues for invalidate the order on chain",
+                        "type": "integer",
+                        "example": 444222,
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "chainId": {
+                        "description": "chain id of the network",
+                        "type": "integer",
+                        "example": 1,
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "ratioSellArgument": {
+                        "description": "Price of selling tokens",
+                        "type": "integer",
+                        "example": "1000000000000000000",
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "ratioBuyArgument": {
+                        "description": "Price of receiving tokens",
+                        "type": "integer",
+                        "example": "900000000",
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "sellTokenAddress": {
+                        "description": "Address of the selling token.",
+                        "type": "string",
+                        "example": "0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667",
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "buyTokenAddress": {
+                        "description": "Address of the receiving token.",
+                        "type": "string",
+                        "example": "0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667",
+                        "title": "It is only used for EVM-based networks."
+                      },
+                      "accountId": {
+                        "description": "Account Id representor of the account in the blockchain.",
+                        "type": "integer",
+                        "title": "It is only used for zkSync network."
+                      },
+                      "recipient": {
+                        "description": "Account address in the blockchain.",
+                        "type": "string",
+                        "example": [
+                          "0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"
+                        ],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "nonce": {
+                        "description": "Account nonce in the blockchain.",
+                        "type": "integer",
+                        "example": ["31"],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "amount": {
+                        "description": "Size of the order in terms of base-asset.",
+                        "type": "float",
+                        "example": ["0.82"],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "tokenSell": {
+                        "description": "Address of the selling token.",
+                        "type": "string",
+                        "example": [
+                          "0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"
+                        ],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "tokenBuy": {
+                        "description": "Address of the receiving token.",
+                        "type": "string",
+                        "example": [
+                          "0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"
+                        ],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "ratio": {
+                        "description": "Ratio of receiving to selling.",
+                        "type": "tuple",
+                        "example": ["[\"1000000000000000000\", \"990000000\"]"],
+                        "title": "It is only used for zkSync network."
+                      },
+                      "ethSignature": {
+                        "properties": {
+                          "type": {
+                            "type": "EthereumSignature",
+                            "example": "EthereumSignature"
+                          },
+                          "signature": {
+                            "type": "Signature Hex String",
+                            "example": "0x1bf137178568d44b93258e60f0656cba3064f614e0e3664afa2365ebf09405fe1f54eacf584e2e197c42fcd11656620f9827b85d7675f0e34c02a8ff0cd7b0621c"
+                          }
+                        },
+                        "title": "It is only used for zkSync network."
                       }
                     },
-                    "market": {
-                      "description": "Market's symbol",
-                      "example": ["ETH-DAI","ETH-USDC"],
-                      "type": "string"
-                    },
-                    "amount": {
-                      "description": "Size of the order in terms of base-asset in UNITs.",
-                      "example": ["1000000000"],
-                      "type": "integer"
-                    },
-                    "price": {
-                      "description": "The exact price on which user wants to place order.",
-                      "example": ["10000.00000"],
-                      "type": "float"
-                    },
-                    "type": {
-                      "description": "The type of the order ('m' for Market and 'l' for Limit).",
-                      "example": ["l", "m"],
-                      "type": "Char"
-                    }
-                 },
-              "required": ["type", "price", "amount", "market", "tx"] 
+                    "required": ["validUntil", "signature"]
+                  },
+                  "market": {
+                    "description": "Market's symbol",
+                    "example": ["ETH-DAI", "ETH-USDC"],
+                    "type": "string"
+                  },
+                  "amount": {
+                    "description": "Size of the order in terms of base-asset in UNITs.",
+                    "example": ["1000000000"],
+                    "type": "integer"
+                  },
+                  "price": {
+                    "description": "The exact price on which user wants to place order.",
+                    "example": ["10000.00000"],
+                    "type": "float"
+                  },
+                  "type": {
+                    "description": "The type of the order ('m' for Market and 'l' for Limit).",
+                    "example": ["l", "m"],
+                    "type": "Char"
+                  }
+                },
+                "required": ["type", "price", "amount", "market", "tx"]
               }
             }
           }
@@ -700,136 +764,60 @@
         "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
         "operationId": "Login",
         "tags": ["Authentication"],
-        "parameters": [
-        ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
               "schema": {
                 "type": "object",
-                 "properties": {
-                    "network": {
-                      "description": "The blockchain network that client wants to login in.",
-                      "example": ["ethereum"," zksyncv1_goerli"],
-                      "type": "string"
-                    },
-                    "address": {
-                      "description": "User's wallet address in the blockchain",
-                      "example": ["0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"],
-                      "type": "string"
-                    },
-                    "signature": {
-                      "description": "The hex string of the signature resulted by signing the message 'Login to Dexpresso' with the private key of the user's address.",
-                      "example": ["0x8a1ac5f656fc6945bab83b36d7f50e7578be2883154f4787a91bcd66eda58d575176bbaeb98bbcd109ff3a1529c11235260f0c92116a188c67314ca6ec3b25cd1b"],
-                      "type": "Hex String"
-                    },
-                    "user_data": {
-                      "description": "The successful response will additionally contain a list of latest user orders and fills if this is set to __true__.",
-                      "type": "boolean"
-                    },
-                    "uuid": {
-                      "description": "The uuid related to the websocket subscribing user to the Dexpresso's orderbook. If this is provided, user fills and user ",
-                      "example": ["42f26774-e624-4fbb-97be-00f14f505268"],
-                      "type": "string"
-                    }
-                 },
-              "required": ["network", "address", "signature"] 
+                "properties": {
+                  "network": {
+                    "description": "The blockchain network that client wants to login in.",
+                    "example": ["ethereum", " zksyncv1_goerli"],
+                    "type": "string"
+                  },
+                  "address": {
+                    "description": "User's wallet address in the blockchain",
+                    "example": ["0x14be4Dc6E2e7562eB80F20fA4f8dbD072B8a5667"],
+                    "type": "string"
+                  },
+                  "signature": {
+                    "description": "The hex string of the signature resulted by signing the message 'Login to Dexpresso' with the private key of the user's address.",
+                    "example": [
+                      "0x8a1ac5f656fc6945bab83b36d7f50e7578be2883154f4787a91bcd66eda58d575176bbaeb98bbcd109ff3a1529c11235260f0c92116a188c67314ca6ec3b25cd1b"
+                    ],
+                    "type": "Hex String"
+                  },
+                  "user_data": {
+                    "description": "The successful response will additionally contain a list of latest user orders and fills if this is set to __true__.",
+                    "type": "boolean"
+                  },
+                  "uuid": {
+                    "description": "The uuid related to the websocket subscribing user to the Dexpresso's orderbook. If this is provided, user fills and user ",
+                    "example": ["42f26774-e624-4fbb-97be-00f14f505268"],
+                    "type": "string"
+                  }
+                },
+                "required": ["network", "address", "signature"]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "A json response containing information of the submitted order",
+            "description": "A json response containing information of the successful login",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "json",
                   "required": ["success", "user_id", "access_token"],
                   "properties": {
-                    "success": {"format": "boolean"},
-                    "user_id": {"format": "string"},
-                    "access_token": {"format": "string: jwt.access.token"},
+                    "success": { "format": "boolean" },
+                    "user_id": { "format": "string" },
+                    "access_token": { "format": "string: jwt.access.token" },
                     "user_orders": { "format": "List [Orders]" },
                     "user_fills": { "format": "List [Fills/Trades]" }
-
                   }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/fills": {
-      "get": {
-        "summary": "GET latest trades",
-        "description": "Provides latest trades in the chosen __network__ and __market__.",
-        "operationId": "MarketFills",
-        "tags": ["Trades"],
-        "parameters": [
-          {
-            "name": "network",
-            "in": "query",
-            "description": "User's selected network name",
-            "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
-            "schema": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          {
-            "name": "market",
-            "in": "query",
-            "description": "Market's symbol",
-            "required": true,
-            "example": ["ETH-DAI","ETH-USDC"],
-            "schema": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "pagination parameter of the API",
-            "required": false,
-            "example": [1, 3],
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "per_page",
-            "in": "query",
-            "description": "number of orders per each page",
-            "required": false,
-            "example": [10, 20],
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A json response containing information of requested markets",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/fills"
                 }
               }
             }
@@ -866,22 +854,11 @@
             }
           },
           {
-            "name": "network",
-            "in": "query",
-            "description": "User's selected network name",
-            "required": false,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
-            "schema": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          {
             "name": "market",
             "in": "query",
             "description": "Market's symbol",
             "required": false,
-            "example": ["ETH-DAI","ETH-USDC"],
+            "example": ["ETH-DAI", "ETH-USDC"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -912,7 +889,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of requested markets",
+            "description": "A json response containing information of user trade history for the given network and market",
             "content": {
               "application/json": {
                 "schema": {
@@ -937,52 +914,51 @@
     "/markets/subscription": {
       "post": {
         "summary": "SUBSCRIBE to a market",
-        "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
-        "operationId": "Login",
+        "description": "The endpoint provides clients with market updates",
+        "operationId": "MarketSubscription",
         "tags": ["Websocket"],
-        "parameters": [
-        ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
               "schema": {
                 "type": "object",
-                 "properties": {
-                    "network": {
-                      "description": "The blockchain network that client wants to login in.",
-                      "example": ["ethereum"," zksyncv1_goerli"],
-                      "type": "string"
-                    },
-                    "market": {
-                      "description": "Target market to which the client wants to subscribe.",
-                      "example": ["ETH-DAI"],
-                      "type": "string"
-                    },
-                    "uuid": {
-                      "description": "The uuid related to the websocket subscribing user to the Dexpresso's orderbook. If this is provided, user fills and user ",
-                      "example": ["42f26774-e624-4fbb-97be-00f14f505268"],
-                      "type": "string"
-                    },
-                    "clear": {
-                      "description": "unsubscribe from all previous WS connections before starting this WS.",
-                      "type": "boolean"
-                    }
-                 },
-              "required": ["network", "market", "uuid"] 
+                "properties": {
+                  "network": {
+                    "description": "The blockchain network that client wants to login in.",
+                    "example": ["ethereum", " zksyncv1_goerli"],
+                    "type": "string"
+                  },
+                  "market": {
+                    "description": "Target market to which the client wants to subscribe.",
+                    "example": ["ETH-DAI"],
+                    "type": "string"
+                  },
+                  "uuid": {
+                    "description": "The uuid related to the websocket subscribing user to the Dexpresso's orderbook. If this is provided, user fills and user ",
+                    "example": ["42f26774-e624-4fbb-97be-00f14f505268"],
+                    "type": "string"
+                  },
+                  "clear": {
+                    "description": "unsubscribe from all previous WS connections before starting this WS.",
+                    "type": "boolean"
+                  }
+                },
+                "required": ["network", "market", "uuid"]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "A json response containing information of the submitted order",
+            "description": "A json response containing information of the successfull subscription",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "json",
                   "required": ["success"],
                   "properties": {
-                    "success": {"format": "boolean"}
+                    "success": { "format": "boolean" }
                   }
                 }
               }
@@ -1002,8 +978,8 @@
       },
       "delete": {
         "summary": "UNSUBSCRIBE from market",
-        "description": "The endpoint provides clients with a JWT in order to enable easy authentication during a temporary session.",
-        "operationId": "Login",
+        "description": "The endpoint terminates providing market updates to clients.",
+        "operationId": "MarketUnSubscription",
         "tags": ["Websocket"],
         "parameters": [
           {
@@ -1011,7 +987,13 @@
             "in": "query",
             "description": "User's selected network name",
             "required": true,
-            "example": ["zksyncv1", "ethereum", "zksyncv1_goerli", "fantom", "polygon"],
+            "example": [
+              "zksyncv1",
+              "ethereum",
+              "zksyncv1_goerli",
+              "fantom",
+              "polygon"
+            ],
             "schema": {
               "type": "string",
               "format": "string"
@@ -1022,7 +1004,7 @@
             "in": "query",
             "description": "Market's symbol",
             "required": true,
-            "example": ["ETH-DAI","ETH-USDC"],
+            "example": ["ETH-DAI", "ETH-USDC"],
             "schema": {
               "type": "string",
               "format": "string"
@@ -1042,14 +1024,14 @@
         ],
         "responses": {
           "200": {
-            "description": "A json response containing information of the submitted order",
+            "description": "A json response containing information of the successfull un subscription",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "json",
                   "required": ["success"],
                   "properties": {
-                    "success": {"format": "boolean"}
+                    "success": { "format": "boolean" }
                   }
                 }
               }
@@ -1075,9 +1057,9 @@
         "type": "object",
         "required": ["id", "name"],
         "properties": {
-          "id": {"format": "int64"},
-          "name": {"type": "string"},
-          "tag": {"type": "string"}
+          "id": { "format": "int64" },
+          "name": { "type": "string" },
+          "tag": { "type": "string" }
         }
       },
       "markets_info": {
@@ -1088,27 +1070,27 @@
             "type": "list",
             "format": "list",
             "properties": {
-              "network": {"format": "string"},
-              "base_asset_name": {"format": "string"},
-              "quote_asset_name": {"format": "string"},
-              "display_name": {"format": "string"},
-              "price_precision": {"format": "int32"},
+              "network": { "format": "string" },
+              "base_asset_name": { "format": "string" },
+              "quote_asset_name": { "format": "string" },
+              "display_name": { "format": "string" },
+              "price_precision": { "format": "int32" },
               "base_asset": {
                 "type": "json",
                 "format": "json",
                 "properties": {
-                  "address": {"format": "string"},
-                  "symbol": {"format": "string"},
-                  "decimals": {"format": "int32"}
+                  "address": { "format": "string" },
+                  "symbol": { "format": "string" },
+                  "decimals": { "format": "int32" }
                 }
               },
               "quote_asset": {
                 "type": "json",
                 "format": "json",
                 "properties": {
-                  "address": {"format": "string"},
-                  "symbol": {"format": "string"},
-                  "decimals": {"format": "int32"}
+                  "address": { "format": "string" },
+                  "symbol": { "format": "string" },
+                  "decimals": { "format": "int32" }
                 }
               }
             }
@@ -1123,12 +1105,12 @@
             "type": "list",
             "format": "list",
             "properties": {
-              "network": {"format": "string"},
-              "limit_enabled": {"format": "boolean"},
-              "market": {"format": "string"},
-              "maker_fee": {"format": "format"},
-              "taker_fee": {"format": "format"},
-              "min_order_size": {"format": "format"}
+              "network": { "format": "string" },
+              "limit_enabled": { "format": "boolean" },
+              "market": { "format": "string" },
+              "maker_fee": { "format": "format" },
+              "taker_fee": { "format": "format" },
+              "min_order_size": { "format": "format" }
             }
           }
         }
@@ -1141,14 +1123,14 @@
             "type": "list",
             "format": "list",
             "properties": {
-              "network": {"format": "string"},
-              "last_price": {"format": "float"},
-              "change": {"format": "float"},
-              "high_price": {"format": "float"},
-              "low_price": {"format": "float"},
-              "base_volume": {"format": "float"},
-              "quote_volume": {"format": "float"},
-              "market": {"format": "string"}
+              "network": { "format": "string" },
+              "last_price": { "format": "float" },
+              "change": { "format": "float" },
+              "high_price": { "format": "float" },
+              "low_price": { "format": "float" },
+              "base_volume": { "format": "float" },
+              "quote_volume": { "format": "float" },
+              "market": { "format": "string" }
             }
           }
         }
@@ -1157,21 +1139,23 @@
         "type": "json",
         "required": ["orders"],
         "properties": {
-          "network": {"format": "string"},
-          "price": {"format": "float"},
-          "id": {"format": "int32"},
-          "order_id": {"format": "int32"},
-          "user_id": {"format": "int32"},
-          "base_quantity": {"format": "float"},
-          "quote_quantity": {"format": "float"},
-          "unfilled": {"format": "float"},
-          "unbroadcasted": {"format": "float"},
-          "maker_fee": {"format": "float"},
-          "taker_fee": {"format": "float"},
-          "created_at": {"format": "Datetime"},
-          "expiration": {"format": "int32"},
-          "type": {"type": "string"},
-          "status": {"format": "string"}
+          "network": { "format": "string" },
+          "price": { "format": "float" },
+          "id": { "format": "int32" },
+          "user_address": { "format": "string" },
+          "base_quantity": { "format": "float" },
+          "quote_quantity": { "format": "float" },
+          "unfilled": { "format": "float" },
+          "unbroadcasted": { "format": "float" },
+          "maker_fee": { "format": "float" },
+          "taker_fee": { "format": "float" },
+          "created_at": { "format": "Datetime" },
+          "expiration": { "format": "int32" },
+          "type": { "type": "string" },
+          "status": { "format": "string" },
+          "market": { "format": "string" },
+          "side": { "format": "string" },
+          "client_order_id": { "format": "string" }
         }
       },
       "user_orders": {
@@ -1197,10 +1181,10 @@
             "type": "list",
             "format": "list",
             "properties": {
-              "price": {"format": "float"},
-              "amount": {"format": "float"},
-              "total": {"format": "float"},
-              "side": {"format": "Char: 'b', 's'"}
+              "price": { "format": "float" },
+              "amount": { "format": "float" },
+              "total": { "format": "float" },
+              "side": { "format": "Char: 'b', 's'" }
             }
           }
         }
@@ -1216,20 +1200,20 @@
               "schema": {
                 "type": "json",
                 "properties": {
-                  "id": {"format": "int32"},
-                  "network": {"format": "string"},
-                  "price": {"format": "float"},
-                  "maker_user_id": {"format": "string"},
-                  "taker_user_id": {"format": "string"},
-                  "tx_hash": {"format": "string"},
-                  "amount": {"format": "float"},
-                  "maker_fee": {"format": "float"},
-                  "taker_fee": {"format": "float"},
-                  "created_at": {"format": "Datetime"},
-                  "maker_order_id": {"format": "int32"},
-                  "taker_order_id": {"format": "int32"},
-                  "type": {"type": "string"},
-                  "status": {"format": "string"}
+                  "id": { "format": "int32" },
+                  "network": { "format": "string" },
+                  "price": { "format": "float" },
+                  "maker_user_id": { "format": "string" },
+                  "taker_user_id": { "format": "string" },
+                  "tx_hash": { "format": "string" },
+                  "amount": { "format": "float" },
+                  "maker_fee": { "format": "float" },
+                  "taker_fee": { "format": "float" },
+                  "created_at": { "format": "Datetime" },
+                  "maker_order_id": { "format": "int32" },
+                  "taker_order_id": { "format": "int32" },
+                  "type": { "type": "string" },
+                  "status": { "format": "string" }
                 }
               }
             }
